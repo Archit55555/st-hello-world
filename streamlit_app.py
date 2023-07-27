@@ -1,8 +1,4 @@
 import streamlit as st
-source /home/adminuser/venv/bin/activate
-pip install gensim
-import gensim
-from gensim import corpora, models
 import re
 import heapq
 import whisper
