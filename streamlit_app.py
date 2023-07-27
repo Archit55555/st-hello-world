@@ -1,6 +1,10 @@
 import streamlit as st
-pip install gensim
-pip install --upgrade gensim streamlit
+import os
+try:
+    import gensim
+except ImportError:
+    os.system('pip install gensim')
+    import gensim
 import gensim
 from gensim import corpora, models
 import re
