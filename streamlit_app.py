@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-from bertopic import BERTopic
-from bertopic import BERTopic
 model = BERTopic(verbose=True)
 docs = [str(text) for text in df['Text'].tolist()] 
 topics, probabilities = model.fit_transform(docs)
