@@ -1,10 +1,6 @@
 import streamlit as st
-import os
-try:
-    import gensim
-except ImportError:
-    os.system('pip install gensim')
-    import gensim
+source /home/adminuser/venv/bin/activate
+pip install gensim
 import gensim
 from gensim import corpora, models
 import re
