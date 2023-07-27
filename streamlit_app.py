@@ -1,6 +1,6 @@
 import streamlit as st
-!pip install gensim
-!pip install --upgrade gensim streamlit
+pip install gensim
+pip install --upgrade gensim streamlit
 import gensim
 from gensim import corpora, models
 import re
