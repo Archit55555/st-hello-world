@@ -37,7 +37,21 @@ from gensim import corpora
 def prepare_training_data(docs):
     id2word = corpora.Dictionary(docs)
     corpus = [id2word.doc2bow(doc) for doc in docs]
+    return id2word, corpus 
+import gensim
+from gensim import corpora
+
+
+def prepare_training_data(docs):
+    id2word = corpora.Dictionary(docs)
+    corpus = [id2word.doc2bow(doc) for doc in docs]
     return id2word, corpus
+
+
+def train_model(docs, num_topics: int = 10, per_word_topics: bool = True):
+    id2word, corpus = prepare_training_data(docs)
+    model = gensim.models.LdaModel(corpus=corpus, id2word=id2word, num_topics=num_topics, per_word_topics=per_word_topics)
+    return model
 
 
 def train_model(docs, num_topics: int = 10, per_word_topics: bool = True):
